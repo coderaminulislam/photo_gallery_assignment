@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class MoodsingleViews extends StatelessWidget {
-  const MoodsingleViews({super.key});
+class singleViews extends StatelessWidget {
+    singleViews({super.key, required this.itemLists, required this.index});
+    final List<Map<String, dynamic>> itemLists;
+    final int index;
+
+
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -21,9 +26,9 @@ class MoodsingleViews extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10))),
           ),
-          title: const Text(
-            'Mood',
-            style: TextStyle(
+          title: Text(
+            '${itemLists[index]['itemName']}',
+            style: const TextStyle(
               fontFamily: 'Poppins',
               fontSize: 20,
               fontWeight: FontWeight.w600,
@@ -55,8 +60,10 @@ class MoodsingleViews extends StatelessWidget {
                         height: 300,
                         width: 350,
                         decoration: BoxDecoration(
-                          image: const DecorationImage(
-                            image: AssetImage('assets/images/singleImage.png'),
+                          borderRadius: BorderRadius.circular(30.0),
+                          image:  DecorationImage(
+                            image: AssetImage('${itemLists[index]['imageLink']}'),
+                            fit: BoxFit.cover
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -76,14 +83,15 @@ class MoodsingleViews extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Wrap(
+                   Wrap(
                     alignment: WrapAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 10),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
                         child: Text(
-                          'Mood With Nature',
-                          style: TextStyle(
+                         '${itemLists[index]['itemName']} With Nature',
+
+                          style: const TextStyle(
                               fontSize: 24,
                               fontFamily: 'Poppins',
                               color: Colors.black),
@@ -162,6 +170,7 @@ class MoodsingleViews extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 22, vertical: 20),
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30.0),
                               image: const DecorationImage(
                                 image: AssetImage('assets/images/asthetic.png'),
                                 fit: BoxFit.cover,
@@ -199,6 +208,7 @@ class MoodsingleViews extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 22, vertical: 20),
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30.0),
                               image: const DecorationImage(
                                 image: AssetImage('assets/images/animals.png'),
                                 fit: BoxFit.cover,
@@ -247,8 +257,11 @@ class MoodsingleViews extends StatelessWidget {
                       height: 300,
                       width: 350,
                       decoration: BoxDecoration(
-                        image: const DecorationImage(
-                          image: AssetImage('assets/images/singleImage.png'),
+                          borderRadius: BorderRadius.circular(30.0),
+                        image:  DecorationImage(
+                          
+                          image: AssetImage('${itemLists[index]['imageLink']}'),
+                          fit: BoxFit.cover
                         ),
                         boxShadow: [
                           BoxShadow(
@@ -273,13 +286,13 @@ class MoodsingleViews extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      const Wrap(
+                       Wrap(
                         children: [
                           Padding(
-                            padding: EdgeInsets.symmetric(vertical: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Text(
-                              'Mood With Nature',
-                              style: TextStyle(
+                              '${itemLists[index]['itemName']} With Nature',
+                              style: const TextStyle(
                                   fontSize: 24,
                                   fontFamily: 'Poppins',
                                   color: Colors.black),
@@ -358,6 +371,7 @@ class MoodsingleViews extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 22, vertical: 20),
                                 decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30.0),
                                   image: const DecorationImage(
                                     image: AssetImage(
                                         'assets/images/asthetic.png'),
@@ -396,6 +410,7 @@ class MoodsingleViews extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 22, vertical: 20),
                                 decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30.0),
                                   image: const DecorationImage(
                                     image:
                                         AssetImage('assets/images/animals.png'),
