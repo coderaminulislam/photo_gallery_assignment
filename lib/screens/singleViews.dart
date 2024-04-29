@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class singleViews extends StatelessWidget {
-    singleViews({super.key, required this.itemLists, required this.index});
-    final List<Map<String, dynamic>> itemLists;
-    final int index;
-
-
+  singleViews({super.key, required this.itemLists, required this.index});
+  final List<Map<String, dynamic>> itemLists;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -61,10 +58,10 @@ class singleViews extends StatelessWidget {
                         width: 350,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30.0),
-                          image:  DecorationImage(
-                            image: AssetImage('${itemLists[index]['imageLink']}'),
-                            fit: BoxFit.cover
-                          ),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  '${itemLists[index]['imageLink']}'),
+                              fit: BoxFit.cover),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(.5),
@@ -83,14 +80,13 @@ class singleViews extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                   Wrap(
+                  Wrap(
                     alignment: WrapAlignment.start,
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         child: Text(
-                         '${itemLists[index]['itemName']} With Nature',
-
+                          '${itemLists[index]['itemName']} With Nature',
                           style: const TextStyle(
                               fontSize: 24,
                               fontFamily: 'Poppins',
@@ -257,12 +253,11 @@ class singleViews extends StatelessWidget {
                       height: 300,
                       width: 350,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.0),
-                        image:  DecorationImage(
-                          
-                          image: AssetImage('${itemLists[index]['imageLink']}'),
-                          fit: BoxFit.cover
-                        ),
+                        borderRadius: BorderRadius.circular(30.0),
+                        image: DecorationImage(
+                            image:
+                                AssetImage('${itemLists[index]['imageLink']}'),
+                            fit: BoxFit.cover),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(.5),
@@ -286,7 +281,7 @@ class singleViews extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                       Wrap(
+                      Wrap(
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),
